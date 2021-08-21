@@ -100,17 +100,17 @@ echo $salary
 
 There are also some built-in variable:
 
-- $0: name of the script.
-- $1 - $9: first 9 arguments to the script
-- $#: number of arguments passed to the script.
-- $@: all arguments supplied to the script.
-- $?: exit status of the most recently run process.
-- $$: process ID of current script.
-- $USER: username who runs the script.
-- $HOSTNAME: hostname where the script runs
-- $SECONDS: number of seconds since the script was started.
-- $RANDOM: returns a different random number.
-- $LINENO: returns current line number in the script.
+- __$0__: name of the script.
+- __$1 - $9__: first 9 arguments to the script
+- __$#__: number of arguments passed to the script.
+- __$@__: all arguments supplied to the script.
+- __$?__: exit status of the most recently run process.
+- __$$__: process ID of current script.
+- __$USER__: username who runs the script.
+- __$HOSTNAME__: hostname where the script runs
+- __$SECONDS__: number of seconds since the script was started.
+- __$RANDOM__: returns a different random number.
+- __$LINENO__: returns current line number in the script.
 
 ## User Interface and User Input
 
@@ -291,3 +291,4 @@ Some operators have been discussed in previous section. There are also another o
 - __expr item1 operator item2__: the same with let, but print the answer instead of storing the result in variable.
 - __$expression__: execute expression inside
 - __${#variable}__: length of variable
+
