@@ -78,7 +78,7 @@ However, problem may arise if we want to create more than instance. In this case
 > function Person (theFirstName, theMiddleName, theLastName, theAddress, theDrive) {
 ... this.firstName = theFirstName;
 ... this.middleName = theMiddleName;
-... this. LastName = theLastName;
+... this.lastName = theLastName;
 ... this.address = theAddress;
 ... this.drive = function() {
 .....  console. log(theDrive);
