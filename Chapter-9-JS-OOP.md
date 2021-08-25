@@ -52,10 +52,10 @@ undefined
 
 > Person
 [Function: Person]
-> var zaky = new Person('Zaky', 'Ahmad', 'Aditya', 'Kalasan', 'Yogyakarta');
+> var glend = new Person('Glend', 'Steven', 'Maatita', 'Gubeng', 'Surabaya');
 undefined
-> zaky.printName();
-Zaky Ahmad Aditya
+> glend.printName();
+Glend Steven Maatita
 undefined
 >
 ```
@@ -80,8 +80,8 @@ const Person = class {
     }
 }
 
-var zaky = new Person('Zaky','Ahmad','Aditya','Kalasan');
-zaky.printName();
+var glend = new Person('Glend', 'Steven', 'Maatita', 'Gubeng');
+glend.printName();
 ```
 or:
 
@@ -103,8 +103,8 @@ var Person = class {
     }
 }
 
-var zaky = new Person('Glend', 'Steven', 'Maatita', 'Surabaya');
-zaky.printName();
+var glend = new Person('Glend', 'Steven', 'Maatita', 'Surabaya');
+glend.printName();
 ```
 
 Please note that both ways of class definition is not __hoisted__, means that class should be defined first before its usage.
@@ -131,8 +131,8 @@ var Person = class {
     }
 }
 
-var zaky = new Person('Glend', 'Steven', 'Maatita', 'Surabaya');
-zaky.printName();
+var glend = new Person('Glend', 'Steven', 'Maatita', 'Surabaya');
+glend.printName();
 
 class Programmer extends Person {
     constructor(theFirstName, theMiddleName, theLastName, theAddress, theProfession) {
@@ -176,8 +176,8 @@ class Person {
     }
 }
 
-var zaky = new Person('Glend', 'Steven', 'Maatita', 'Surabaya');
-zaky.printName();
+var glend = new Person('Glend', 'Steven', 'Maatita', 'Surabaya');
+glend.printName();
 
 class Programmer extends Person {
     constructor(theFirstName, theMiddleName, theLastName, theAddress, theProfession) {
@@ -220,8 +220,8 @@ class Person {
     }
 }
 
-var zaky = new Person('Glend', 'Steven', 'Maatita', 'Surabaya');
-zaky.printName();
+var glend = new Person('Glend', 'Steven', 'Maatita', 'Surabaya');
+glend.printName();
 
 class Programmer extends Person {
     constructor(theFirstName, theMiddleName, theLastName, theAddress, theProfession) {

@@ -16,25 +16,25 @@ For one and simple definition, direct definition like the source code below is e
 
 ```
 > var person = {
-... firstName: 'Zaky',
-... middleName: 'Ahmad',
-... lastName: ‘Aditya’,
-... address: 'Kalasan, Yogyakarta’,
+... firstName: 'Glend',
+... middleName: 'Steven',
+... lastName: 'Maatita',
+... address: 'Gubeng, Surabaya',
 ... drive: function() {
-..... console. log('mountain bike’);
+..... console. log('mountain bike');
 ..... }
 ... }
 undefined
 > person
-{ firstName: 'Zaky',
-middleName: 'Ahmad',
-lastName: ‘Aditya’,
-address: ‘Kalasan, Yogyakarta’,
+{ firstName: 'Glend',
+middleName: 'Steven',
+lastName: 'Maatita',
+address: 'Kalasan, Yogyakarta',
 drive: [Function: drive] }
 > person. firstName
-'Zaky'
+'Glend'
 > person['lastName' ]
-'Aditya’
+'Steven'
 > person.drive()
 mountain bike
 undefined
@@ -46,26 +46,26 @@ The source code above has the same effect with this:
 ``` 
 > var person = new Object();
 undefined
-> person.firstName = 'Zaky';
-'Zaky'
-> person.middleName = 'Ahmad';
-'Ahmad'
-> person.lastName = 'Aditya’;
-‘Aditya’
-> person.address = 'Kalasan, Yogyakarta’;
-'Kalasan, Yogyakarta’
+> person.firstName = 'Glend';
+'Glend'
+> person.middleName = 'Steven';
+'Steven'
+> person.lastName = 'Maatita';
+‘Maatita'
+> person.address = 'Gubeng, Kertajaya';
+'Gubeng, Kertajaya'
 > person.drive = function() {
-... console. Llog('mountain bike’);
+... console.log('mountain bike’);
 ... }
 [Function]
 > person
-{ firstName: 'Zaky',
-middleName: 'Ahmad',
-lastName: 'Aditya’,
-address: 'Kalasan, Yogyakarta’,
+{ firstName: 'Glend',
+middleName: 'Steven',
+lastName: 'Maatita',
+address: 'Gubeng, Surabaya',
 drive: [Function] }
 > person. firstName
-'Zaky'
+'Glend'
 > person.drive()
 mountain bike
 undefined
@@ -87,20 +87,20 @@ However, problem may arise if we want to create more than instance. In this case
 undefined
 > Person
 [Function: Person]
-> var zaky = new Person('Zaky','Ahmad', 'Aditya', 'Kalasan, Yogyakarta', 'mountain bike');
+> var glend = new Person('Glend', 'Steven', 'Maatita', 'Gubeng, Surabaya', 'mountain bike');
 undefined
-> zaky
+> glend
 Person {
-    firstName: ‘Zaky',
-    middleName: 'Ahmad',
-    lastName: ‘Aditya’,
-    address: ‘Kalasan, Yogyakarta’,
+    firstName: 'Glend',
+    middleName: 'Steven',
+    lastName: 'Maatita',
+    address: 'Gubeng, Surabaya',
     drive: [Function] }
-> zaky.drive()
+> glend.drive()
 mountain bike
 undefined
-> zaky.firstName
-'Zaky'
+> glend.firstName
+'Glend'
 >
 ```
 
@@ -119,9 +119,9 @@ In JavaScript, prototype can be used for inheritance purpose.
 ..... }
 ... }
 undefined
-> var zaky = new Person('Zaky','Ahmad', 'Aditya','Kalasan, Yogyakarta', 'mountain bike');
+> var glend = new Person('Glend', 'Steven', 'Maatita', 'Gubeng, Surabaya', 'mountain bike');
 undefined
-> zaky.drive()
+> glend.drive()
 mountain bike
 undefined
 > Person.prototype.showFullName = function() {
@@ -130,8 +130,8 @@ undefined
 [Function]
 > Person
 [Function: Person]
-> zaky.showFullName()
-Zaky Ahmad Aditya
+> glend.showFullName()
+Glend Steven Maatita
 undefined
 >
 ```

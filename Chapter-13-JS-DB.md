@@ -1,4 +1,4 @@
-#Accessing Database
+# Accessing Database
 
 Database software (or somtimes DBMS - Database Management System) is a kind of software which provides container and runtime to handle data. Since many computing tasks involve I/O and data operation, DBMS has been developed since the beginning of computing era to handle data workload. This chapter is used to discuss how to handle database using
 
@@ -39,7 +39,7 @@ There is a driver which can be used by Node.js developer to connect and doing qu
 To use MongoDB with Node.js, developer may use Mongoose as its library to access MongoDB data. See http://mongoosejs.com/ for more information. In this example, we will populate data first and then use an example source code to access employees data.
 
 ```
-$ mongo
+~$ mongo
 MongoDB shell version v3.6.3\
 connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.6.3
@@ -52,19 +52,14 @@ test
 > use mydb
 switched to db mydb
 > show dbs
-admin @.@00GB
-local @.000GB
-> empl = { name : "Zaky", address : "Griya Purwa Asri" }
-{ "name" : "Zaky", "address" : "Griya Purwa Asri" }
-> emp2 = { name : "Ahmad", address : "Purwomartani", email :
-"zakyahmadaditya@gmail.com" }
-{
-    "name" : "Ahmad",
-    "address" : "Purwomartani",
-    "email" : "zakyahmadaditya@gmail.com"
-}
-> emp3 = { name : "Aditya", address : "Kalasan", phone: "08787878787" }
-{ "name" : "Aditya", "address" : "Kalasan", "phone" : "08787878787" }
+admin 0.000GB
+local 0.000GB
+> empl = { name : "Glend", address : "Gubeng Kertajaya" }
+{ "name" : "Glend", "address" : "Kertajaya" }
+> emp2 = { name : "Steven", address : "Gubeng", email : "steven@gmail.com" }
+{ "name" : "Steven", "address" : "Gubeng", "email" : "steven@gmail.com" }
+> emp3 = { name : "Maatita", address : "Surabaya", phone: "085686995585" }
+{ "name" : "Maatita", "address" : "Surabaya", "phone" : "085686995585" }
 > db.employees.insert( emp1 )
 WriteResult({ "nInserted" : 1 })
 > db.employees.insert( emp2 )
@@ -78,26 +73,26 @@ mydb 0.000GB
 > show collections
 employees
 > db.employees.find()
-{ "_id" : ObjectId("5aa9b47bc58fc8679cc3ee14"), "name" : "Zaky", "address" : "Griya Purwa Asri" }
-{ "_id" : ObjectId("5aa9b47ec58fc8679cc3ee15"), "name" : "Ahmad", "address" : "Purwomartani", "email" : "zakyahmadaditya@gmail.com" }
-{ "_id" : ObjectId("5aa9b483c58fc86/9cc3ee16"), "name" : "Aditya", "address" : "Kalasan", "phone" : "@8787878787" }
-> db.employees. findOne()
+{ "_id" : ObjectId("5aa9b47bc58fc8679cc3ee14"), "name" : "Glend", "address" : "Kertajaya" }
+{ "_id" : ObjectId("5aa9b47ec58fc8679cc3ee15"), "name" : "Steven", "address" : "Gubeng", "email" : "steven@gmail.com" }
+{ "_id" : ObjectId("5aa9b483c58fc86/9cc3ee16"), "name" : "Maatita", "address" : "Surabaya", "phone" : "@085686995585" }
+> db.employees.findOne()
 {
     "id" : ObjectId("5aa9b47bc58fc86/9cc3ee14"),
-    "name" : "Zaky",
-    "address" : "Griya Purwa Asri"
+    "name" : "Glend",
+    "address" : "Kertajaya"
 }
-> db.employees. find().Limit(2)
-{ "_id" : ObjectId("5aa9b47bc58fc8679cc3ee14"), "name" : "Zaky", "address" : "Griya Purwa Asri" }
-{ "_id" : ObjectId("5aa9b47ec58fc8679cc3ee15"), "name" : "Ahmad", "address" : "Purwomartani", "email" : "zakyahmadaditya@gmail.com" }
+> db.employees.find().limit(2)
+{ "_id" : ObjectId("5aa9b47bc58fc8679cc3ee14"), "name" : "Glend", "address" : "Kertajaya" }
+{ "_id" : ObjectId("5aa9b47ec58fc8679cc3ee15"), "name" : "Steven", "address" : "Gubeng", "email" : "steven@gmail.com" }
 >
 ```
 
 An example of how developer may use Node.js to get all of those employees data:
 
-```
+```js
 var mongoose = require('mongoose'),
-    Schema = mongoose. Schema;
+    Schema = mongoose.Schema;
 
 mongoose.connect('mongodb://localhost/mydb' );
 

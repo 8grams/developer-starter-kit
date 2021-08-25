@@ -1,10 +1,10 @@
 # Shell Programming - Bash
 
-This chapter discuss shell programming. Just as stated in previous chapter, shell is a userland software which provides a text user interface to give command using internal builtin commands and also manage program execution and process, therefore its main function is as command interpreter. User write commands in shell then whenever user push Enter button, shell will interprets and runs the command. Shell also provides a set of programming language constructs which enable developer to automate tasks or doing any other repetitive tasks. This chapter discuss how to create the shell script for that purposes.
+This chapter discuss shell programming. Just as stated in previous chapter, shell is a userland software which provides a text user interface to give command using internal built-in commands and also manage program execution and process, therefore its main function is as command interpreter. User write commands in shell then whenever user push __Enter__ button, shell will interprets and runs the command. Shell also provides a set of programming language constructs which enable developer to automate tasks or doing any other repetitive tasks. This chapter discuss how to create the shell script for that purposes.
 
 ## What is Shell Script?
 
-Shell script (or in other OS such as Windows also known as batch file) is a file which its content is a set of instructions - known by shell - to do a specific task. In other word, we may define shell script as source code of programming language which consists of shell builtin commands and other external executable commands. Those are usually mixed and constructed to create a file which can be executed so that whenever that functionalities needed they can be done again using that file.
+__Shell script__ (or in other OS such as Windows also known as batch file) is a file which its content is a set of instructions - known by shell - to do a specific task. In other word, we may define shell script as source code of programming language which consists of shell builtin commands and other external executable commands. Those are usually mixed and constructed to create a file which can be executed so that whenever that functionalities needed they can be done again using that file.
 
 A shell script must be created specfic to be executed by a specific shell script software. As we may understood, there are some shell software available at this moment. So, when we create a shell script for Bash, it usually can not be executed succesfully using _Fish_ or _Zsh_ or _Tcsh_.
 
@@ -25,19 +25,20 @@ A shell script is an ordinary text file - one may creates it using any text edit
 ```
 The first line (__#!/usr/bin/bash__) is called __shebang__ and is used to let the shell knows that all of the contents should be executed by Bash which reside in that directory (__/usr/bin/bash__). The next line should be known and understood by Bash in the form of shell builtin commands and or external commands. For the shell script to be able to be executed, the file mode should be changed to executable (assumming the filename is myfirst.sh):
 
-    chmod +x myfirst.sh
+    ~$ chmod +x myfirst.sh
 
 To execute the shell script, type:
 
-    ./myfirst.sh
+    ~$ ./myfirst.sh
 
-or if you put the shell script into known PATH for execution (/usr/bin, /usr/local/bin, /home/user/bin, etc - depends of settings), just type:
+or if you put the shell script into known PATH for execution (__/usr/bin__, __/usr/local/bin__, __/home/user/bin__, etc - depends of settings), just type:
 
-    myfirst.sh
+    ~$ myfirst.sh
 
 Example:
 _myfirst.sh_
-```
+
+```bash
 #!/usr/bin/bash
 
 clear
@@ -57,7 +58,7 @@ descriptor):
 
 The file descriptor part is usually used like this:
     
-    cat /etc/passwd 1>/dev/null
+    ~$ cat /etc/passwd 1>/dev/null
 
 That command means that we will display contents of /etc/passwd file to stdout but the stdout is /dev/null (means "there will be no device to handle"). Bash uses these basic redirection:
 
@@ -67,7 +68,7 @@ That command means that we will display contents of /etc/passwd file to stdout b
 
 Example:
 
-```
+```bash
 echo "Hello" > output.txt
 cat < output.txt
 Hello
@@ -82,7 +83,7 @@ Pipes
 
 Pipe is used to take the output of a command on the left part of pipe and put them as the output of the right part of pipe. Take a look at this example:
 
-    ls -la | grep *.rs
+    ~$ ls -la | grep *.rs
 
 The example above is used to list files in current directory and the result (the list) will be grep’ed to find all the files with __.rs__ extension.
 
@@ -93,7 +94,7 @@ Variable assignment is used to assign a value to a placeholder. The placeholder 
     name=value
 
 Example:
-```
+```bash
 salary=5000000
 echo $salary
 ```
@@ -120,7 +121,7 @@ Naturally, user interface in shell is very raw. There is ony a command line and 
 
 The example will display information window with the size 5 as the height and 20 as the width. See __dialog — help__ to see more options. For user input, dialog also provides __dialog --inputbox ..., dialog --passwordhox__, etc. For simple user input, read command can be used:
 
-```
+```bash
 #!/bin/bash
 echo Hello, what is your name?
 read yourname
@@ -138,7 +139,7 @@ Syntax of __if__ as follows:
 
 #### Basic
 
-```
+```bash
 if [ <some test> ]
 kthen
     <commands>
@@ -147,7 +148,7 @@ fi
 
 #### if... else
 
-```
+```bash
 if [ <some test> ]
 then
     <commands>
@@ -158,7 +159,7 @@ fi
 
 #### if... elif... else
 
-```
+```bash
 if [ <some test> ]
 then
     <commands>
@@ -195,7 +196,7 @@ Some common tests:
 
 The case statement is used to test that a variable match to a specific pattern and then doing whatever commands based on the result.
 
-```
+```bash
 case <variable> in
 <pattern 1>)
     <commands>
@@ -212,7 +213,7 @@ Looping is used to do repetitive commands. Basically, Bash provides four ways to
 
 ### while
 
-```
+```bash
 while [ <some test> ]
 do
     <commands>
@@ -221,7 +222,7 @@ done
 
 ### until
 
-```
+```bash
 until [ <some test> ]
 do
     <commands>
@@ -230,7 +231,7 @@ done
 
 ### for
 
-```
+```bash
 for var in <list>
 do
     <commands>
@@ -239,7 +240,7 @@ done
 
 select
 
-```
+```bash
 select var in <list>
 do
     <commands>
@@ -250,7 +251,7 @@ done
 
 Function is the smallest unit of program in Bash programming. It encapsulates a set of commands into one unit called function so that it can be reused again. Below is syntac of function:
 
-```
+```bash
 function_name (parameters) {
     ...
     commands
@@ -260,7 +261,7 @@ function_name (parameters) {
 
 or
 
-```
+```bash
 function function_name {
     ...
     commands
@@ -270,7 +271,7 @@ function function_name {
 
 Function can also accept parameters. Parameters can be accessed using $1, $2, $3, and so on. If a values has to be returned from the function, then use __return__:
 
-```
+```bash
 function_name (parameters) {
     ...
     commands

@@ -60,19 +60,20 @@ As JavaScript only gives those two rules, some developers / communities / projec
 A variable is a container to store a value. JavaScript is scripting language, it has dynamically typed as its typing discipline which means that once the storage (i.e variable) is used to store a value of type X, later on the variable can be used to store another type.
 
 *File: src/variables-declare.js*
-```
-var employeelD, emp LoyeeName;
-let employeeAddress, emp LoyeePhone;
 
-console.log(employeeID)
-console.log(employeeName)
-console.log(employeeAddress)
-console.log(employeePhone)
+```js
+var employeeID, employeeName;
+let employeeAddress, employeePhone;
+
+console.log(employeeID);
+console.log(employeeName);
+console.log(employeeAddress);
+console.log(employeePhone);
 
 employeeID='123'
 employeeName='Mr. X'
 employeeAddress='Yogyakarta'
-empployeePhone=' 123234343'
+employeePhone=' 123234343'
 
 console.log(employeeID)
 console.log(employeeName)
@@ -86,7 +87,7 @@ Comment in JavaScript may be written using these rules:
 - __//__ for single line or until end of line comment.
 - For multilines comment, use this:
 
-```
+```js
 ...
 ...
 /*
@@ -102,7 +103,7 @@ Constant is used for any identifier which can not be reasigned and redeclared. J
 
 _file: src/const.js_
 
-```
+```js
 /*
 * const.js
 * although possible to use camelCase or Lowercase,
@@ -120,10 +121,10 @@ console.log(NAME)
 The result is error:
 
 ```
-$ node src/const.js
+~$ node src/const.js
 JavaScript
 const.js:13
-NAME = ‘TypeScript'
+NAME = 'TypeScript'
 ^
 TypeError: Assignment to constant variable.
 at Object.<anonymous> (@3-const.js:13:6)
@@ -180,21 +181,21 @@ For simple conditional, use this syntax:
 ```
 > var res = 10;
 undefined
-> (res==10) ? "yes 10" : "not 10”
+> (res==10) ? "yes 10" : "not 10"
 "yes 10'
 >
 ```
 
 ### If Statement
 
-```
+```js
 if (condition) {
     ...
     statement which will be executed if condition is true
     ...
 ```
 
-```
+```js
 if (condition) {
     ...
     statement which will be executed if condition is true
@@ -206,7 +207,7 @@ if (condition) {
 }
 ```
 
-```
+```js
 if (condition1) {
     ...
     statement which will be executed if condition is true
@@ -226,7 +227,7 @@ if (condition1) {
 
 One may use this statement to evaluate expression and check whether expression result match the specific value.
 
-```
+```js
 switch (expression) {
     case a:
         statement if a is matched
@@ -263,7 +264,7 @@ Looping statement is used to repeat a code block until one condition is fulfille
 
 There are two kind of __while__:
 
-```
+```js
 while (condition) {
     ...
     statement
@@ -271,7 +272,7 @@ while (condition) {
 }
 ```
 
-```
+```js
 do {
     ...
     statement
@@ -288,7 +289,7 @@ Developer write algorithm (or steps to solve problems) into set of instructions.
 
 Basically, __function__ is a specific construct in almost any programming language to define a code block which will be used throughout the codebase. By using function developer abstract the problems into a unit of working solution so that the unit can be used again anywhere. In programming, this kind of solution is called __reusable code__. Basic syntax declaration for JavaScript function:
 
-```
+```js
 function functionName(parameters) {
     ...
     statement
@@ -304,7 +305,7 @@ JavaScript also makes it possible to define __anynymous function__, a function w
 
 A self-invoking function also possible so that anytime JavaScript interpreter find the self-invoking function, it will be executed directly.
 
-```
+```js
 (function () {
     ...
     statement

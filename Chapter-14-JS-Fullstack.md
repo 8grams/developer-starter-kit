@@ -4,7 +4,7 @@ This chapter discuss software stack or tier which form a complete software produ
 
 ## What is Full-stack?
 
-The term full-stack (sometimes maybe fullstack, multi-tiered) is a terminology which refers to solution stack for software product which comprise of front-end and back-end part of the software product. Front-end (FE) deals with providing users with interface so that users can communicate with the software. FE sends request(s) to back-end (BE) which responsible for logic and data processing workload. Between FE and BE, there should be a communication protocol and data serialization to send requests - receive responses. For BE to be able in request processing, there should be a mechanism to expose service whether they need to be accessed directly or via middleware (proxy).
+The term __full-stack__ (sometimes maybe fullstack, multi-tiered) is a terminology which refers to solution stack for software product which comprise of front-end and back-end part of the software product. Front-end (FE) deals with providing users with interface so that users can communicate with the software. FE sends request(s) to back-end (BE) which responsible for logic and data processing workload. Between FE and BE, there should be a communication protocol and data serialization to send requests - receive responses. For BE to be able in request processing, there should be a mechanism to expose service whether they need to be accessed directly or via middleware (proxy).
 
 ## JavaScript for Front-End
 

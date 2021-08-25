@@ -4,7 +4,7 @@ This chapter purpose is to introduce developer to front-end development. As a re
 
 ## What is React?
 
-React (also called "ReactJS", "React.js") is library for building user interface developed by Facebook and currently maintained by Facebook, Instagram, and many parties. It is now in stable condition and future development will be focused on React Fibre.
+__React__ (also called "ReactJS", "React.js") is library for building user interface developed by Facebook and currently maintained by Facebook, Instagram, and many parties. It is now in stable condition and future development will be focused on React Fibre.
 
 ## How React Works
 
@@ -59,7 +59,7 @@ class TodoApp extends React.Component {
         this.setState(prevState => ({
             items: prevState.items.concat(newItem),
             text: '' 
-        })):
+        }));
     }
 }
 
@@ -82,7 +82,7 @@ ReactDOM.render(<TodoApp />, mountNode);
 
 Basically, developer may use React for new application or add React to existing application. For existing application, there is a web page dedicated to ease developer in using React for existing application: https://reactjs.org/docs/add-react-to-an-existing-app.html. For new application, there is a package which should be installed first: create-react-app:
 
-    npm install -g create-react-app
+    ~$ npm install -g create-react-app
 
 Use create-react-app to create a skeleton of new React app:
 
@@ -141,8 +141,8 @@ Inside that directory, you can run several commands:
 
 We suggest that you begin by typing:
 
-    cd first-react-app
-    yarn start
+    ~$ cd first-react-app
+    ~$ yarn start
 
 Happy hacking!
 ```
@@ -152,7 +152,7 @@ Just to have a taste of how React application runs, run it using yarn start:
 ```
 yarn start
 yarn run v1.5.1
-$ react-scripts start
+~$ react-scripts start
 
 Compiled successfully!
 You can now view first-react-app in the browser.

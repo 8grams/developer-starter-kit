@@ -9,13 +9,13 @@ __Babel__ is JavaScript compiler. It takes JavaScript code and change them into 
 Babel works by using specific preset which is written in __$HOME/.babelrc__. Preset is something like template to let Babel knows what kind of source code (specification) developer would like to transpile (into ES5). Start by installing necessary packages:
 
 ```
-$ npm install -g babel-cli
-$ npm install --save-dev babel-preset-env
+~$ npm install -g babel-cli
+~$ npm install --save-dev babel-preset-env
 ```
 
 This is an exmple of __SHOME/.babelrc__
 
-```
+```json
 {
     "presets": ["env"]
 }
@@ -23,7 +23,7 @@ This is an exmple of __SHOME/.babelrc__
 
 Put this file (app.js) inside the directory.
 
-```
+```js
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + 1);
 ```
@@ -52,7 +52,7 @@ __StandardJS__ (https://standardjs.com/) is JavaScript style guide, linter, and 
 
 As an example, here’s the sloppy source code:
 
-```
+```js
 // arrow.js
 var odds = evens.map(v => v + 1)
 var nums = evens.map((v, i) => v + i)
@@ -89,7 +89,7 @@ standard: Use JavaScript Standard Style (https://standardjs.com)
 
 Result:
 
-```
+```js
 var odds = evens.map(v => v + 1)
 var nums = evens.map((v, i) => v + 7)
 ```

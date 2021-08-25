@@ -1,7 +1,6 @@
  # JavaScript Overview
 
-This chapter is used to give an overview of JavaScript so that the reader has a comprehensive view about JavaScript. Although this chapter has no direct connection with coding / programming,
-readers need to understand this chapter in order to understand the big picture which could ease them in understanding the detals of JavaScript.
+This chapter is used to give an overview of JavaScript so that the reader has a comprehensive view about JavaScript. Although this chapter has no direct connection with coding / programming, readers need to understand this chapter in order to understand the big picture which could ease them in understanding the detals of JavaScript.
 
 ## What is JavaScript?
 
@@ -10,7 +9,7 @@ JavaScript is a high level programming language. It covers multiparadigm in prog
 1. Object-Oriented Programming (OOP)
 2. Prototype-Based Programming (PBP)
 3. Functional Programming (FP)
-4. ...and many more.
+4. ... and many more.
 
 The fact that JavaScript is high level programming language shows that JavaScript uses mostly human language (english) for its syntax. JavaScript is interpreted, means that source code will be interpreted and executed directly by interpreter without compiling into native machine code (binary executable). JavaScript has the following features:
 
@@ -75,5 +74,4 @@ As an interpred language, an interpreter is needed to execute JavaScript source 
 
 ## JavaScript Platform / Runtime Environment
 
-JavaScript platform / runtime consists of JavaScript engine, libraries, and package manager. Its purpose is to provide the runtime environment to run JavaScript source code while also provide libraries for software development and tool to manage them. Although not always a must, currently
-__NodeJS__ is usually used. NodeJS consists of V8 JavaScript engine, event-loop for non-blocking I/O / asynchronous programming, and npm as its package manager. This makes it suitable for server side programming.
+JavaScript platform / runtime consists of JavaScript engine, libraries, and package manager. Its purpose is to provide the runtime environment to run JavaScript source code while also provide libraries for software development and tool to manage them. Although not always a must, currently __NodeJS__ is usually used. NodeJS consists of _V8 JavaScript engine_, _event-loop_ for non-blocking I/O / asynchronous programming, and _npm_ as its package manager. This makes it suitable for server side programming.

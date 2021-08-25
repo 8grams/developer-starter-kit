@@ -24,19 +24,19 @@ More info about (including end-of-life) these releases are available at https://
 Installation guides for any platforms are available at download page (https://nodejs.org/en/download/). Although developer is free to use any installation methods, we prefer installation method from binary release which are available at Node.js landing page (https://nodejs.org). After download those two releases, extract at some location (__/opt/software/node/nodejs-lts__ for LTS version, we refer that as __$NODEJS_HOME_LTS__, and __/opt/software/node/nodejs-stable__ for CURRENT version. we refer that as __$NODEJS_HOME_STABLE__):
 
 ```
-$ mkdir /opt/software/node
-$ cd /opt/software/node
-$ tar -xvf $PATH_TO_DOWNLOADED_BIN_PKG/node-v<LTS-VERSION>
-$ mv node-v<LTS-VERSION> nodejs-1ts
-$ tar -xvf $PATH_TO_DOWNLOADED_BIN_PKG/node-v<CURRENT-VERSION>
-$ mv node-v<CURRENT-VERSION> nodejs-stable
+~$ mkdir /opt/software/node
+~$ cd /opt/software/node
+~$ tar -xvf $PATH_TO_DOWNLOADED_BIN_PKG/node-v<LTS-VERSION>
+~$ mv node-v<LTS-VERSION> nodejs-1ts
+~$ tar -xvf $PATH_TO_DOWNLOADED_BIN_PKG/node-v<CURRENT-VERSION>
+~$ mv node-v<CURRENT-VERSION> nodejs-stable
 ```
 
 Create two files to set environment variables: nodejs-stable for CURRENT version, and nodejs-lts for LTS version. Here, they will reside in __$HOME/env__.
 
 _file: SHOME/env/nodejs-stable_
 
-```
+```bash
 NODEJS_HOME=/opt/software/node
 
 export PATH=$HOME/bin: $PATH: $NODEJS_HOME/nodejs-stable/bin
@@ -45,7 +45,7 @@ export MANPATH=$MANPATH: $NODEJS_HOME/nodejs-stable/man
 
 _file: $HOME/env/nodejs-its_
 
-```
+```bash
 NODEJS_HOME=/opt/software/node
 
 export PATH=$HOME/bin: $PATH: $NODEJS_HOME/nodejs-1ts/bin
@@ -54,16 +54,15 @@ export MANPATH=$MANPATH: $NODEJS_HOME/nodejs-1ts/man
 
 After this, to use Node.js, open terminal and source file needed, for example if you want to use CURRENT version:
 
-    source ~/env/nodejs-stable
+    ~$ source ~/env/nodejs-stable
 
 In other terminal, you may use another version:
 
-    source ~/env/nodejs-1ts
+    ~$ source ~/env/nodejs-1ts
 
 ## Package Manager
 
-Basically, developers tend to create module in packages so that they can reuse them (more on module later). The package can be a library or an executable application. As JavaScript can be used
-for front-end and also back-end, the package manager for JavaScript also can be categorized into front-end package manager and non front-end package manager.
+Basically, developers tend to create module in packages so that they can reuse them (more on module later). The package can be a library or an executable application. As JavaScript can be used for front-end and also back-end, the package manager for JavaScript also can be categorized into front-end package manager and non front-end package manager.
 
 ### npm (Node Package Manager)
 
@@ -76,7 +75,7 @@ __npm__ install in 2 location:
 
 Central to npm is a file named package.json which is used to describe all related packaging rules of the software. Therefore, in eveery project, a package.json file should exist in project root directory. Below is an example of package.json file inside GraphQL.js package (see https://github.com/graphql/graphql-js):
 
-```
+```json
 {
   "name": "graphql",
   "version": "16.0.0-alpha.5",
@@ -154,32 +153,32 @@ Developer may find the contents of the file are quite self-explanatory. See __pa
 
 A __package.json__ file can be created by using this command (this should be done first time only in project root directory):
 
-    $ npm init
+    ~$ npm init
 
 Then answer all questions. If one wants to assume "yes" or default contents, then add __--yes__. To change the contents, use:
 
 ```
-$ npm set init.author.email "dev@8grams.dev"
-$ npm set init.author.name "8grams Dev"
+~$ npm set init.author.email "dev@8grams.dev"
+~$ npm set init.author.name "8grams Dev"
 ```
 
 Using __npm__ cli, developer can manage package / library and their dependencies as well as other information which might be needed (a.k.a metadata). Here’s some usage of npm command, add __-g__ for global installation (see manual first, not necessarily can always be done for local and global):
 
 ```
-$ npm install express 
-$ npm uninstall express 
+~$ npm install express 
+~$ npm uninstall express 
 ```
 
 If one wants to save package name into package.json, add --save as the paramater:
 
 ```
-$ npm install express --save
-$ npm uninstall express --save
+~$ npm install express --save
+~$ npm uninstall express --save
 ```
 
 To search for packages, use:
 
-    $ npm search packagename
+    ~$ npm search packagename
 
 More information can be seen at documentation site (https://docs.npmjs.com/). See also __npm --help__.
 
@@ -189,17 +188,17 @@ __yarn__ is another package manager for NodeJS. It was initially developed by Fa
 
 To install yarn the easiest way, just use npm:
 
-    $ npm install -g yarn
+    ~$ npm install -g yarn
 
 The result is yarn cli in global location. From this point, one can use, for example:
 
-    $ yarn install packagename
+    ~$ yarn install packagename
 
 For more information, you may use this:
 
 ```
-$ yarn --help
-$ yarn help install
+~$ yarn --help
+~$ yarn help install
 ```
 
 ### Bower
@@ -208,11 +207,11 @@ __Bower__ (https://bower.io) is package manager for front-end development. It ha
 
 Bower has similar commands with npm. To install Bower, use npm:
 
-    $ npm install -g bower
+    ~$ npm install -g bower
 
 To install package in current directory:
 
-    $ bower install jquery
+    ~$ bower install jquery
 
 After package installation, package will be install in default location: __$PROJECT_HOME/bower_components__. This might be checked by front-end developer so that they may use right location. See bower help for more info.
 
@@ -247,8 +246,7 @@ Since software development activities are complex and many too vendors / communi
 
 ## Front-end Development
 
-JavaScript initially used for browser which is why it has strong domination in front-end development. Front-end part in an application is used to interact with users directly. Basically,
-front-end consists of Web application front-end and mobile application front-end but usually people tend to use Web application for front-end development. To this end, many JavaScript software frameworks and libraries are available to help developers in developing front-end Web application but currently, developers usually use these frameworks / libraries very much:
+JavaScript initially used for browser which is why it has strong domination in front-end development. Front-end part in an application is used to interact with users directly. Basically, front-end consists of Web application front-end and mobile application front-end but usually people tend to use Web application for front-end development. To this end, many JavaScript software frameworks and libraries are available to help developers in developing front-end Web application but currently, developers usually use these frameworks / libraries very much:
 
 - __Angular__ (https://angular.io/), available in JavaScript and TypeScript.
 - __React__ (https://reactjs.org/)
@@ -285,7 +283,7 @@ Therefore, for back-end development, these things are important:
 
 ## CLI Application Development
 
-CLI (Command Line Interface) is a kind of user interface which used in console / terminal / text-based software. Basically, this kind of development span from only simple command line and terminal / console based application with menu. Node.js also provides libraries for that purposes:
+CLI (Command Line Interface) is a kind of user interface which used in console/terminal/text-based software. Basically, this kind of development span from only simple command line and terminal/console based application with menu. Node.js also provides libraries for that purposes:
 
 - __commander.js__ (https://github.com/tj/commander.js/), used for command line only.
 - __Inquirer.js__ (https://github.com/SBoudrias/Inquirer.js), provides library for interactive command line such as requesting input, etc.

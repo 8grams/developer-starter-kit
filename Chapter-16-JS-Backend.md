@@ -76,11 +76,11 @@ In this chapter, we will use one example using Express.js. As always, create an 
 
 Answer all of the questions, then install Express.js:
 
-    $ npm install express
+    ~$ npm install express
 
 This is an example of the simplest applicaton, it just display "Hello" string when user access http://server:3000
 
-```
+```js
 // app.js
 const express = require('express')
 const app = express()
@@ -108,20 +108,16 @@ REST is an architectural style which uses HTTP as its underlying protocol to com
 
 To expose RESTful API (Application Programming Interface), developer may use any HTTP server or maybe also Web framework. The only requirement is they are able to capture HTTP request from client and provide the way to handle them. In __Express.js__, RESTful API is handled using routing. See https://expressjs.com/en/guide/routing.html for more documentation. Here is an example of how developer my provide GET from http://server/employees to return all employees data in JSON.
 
-```
+```js
 const express = require('express' )
 const app = express()
 
 var employees = require('path/to/your/employees.json');
 app.get('/employees', (req, res) => res.send(employees) )
 
-app.listen(3@00, () => console.log('Employees RESTful API active on port 3000!'))
+app.listen(3000, () => console.log('Employees RESTful API active on port 3000!'))
 ```
 
 ## GraphQL
 
 __GraphQL__ is a query language for API which was created by Facebook. It is used to describe and expose data to client, hence graphql-client and graphql-server. This spec also uses HTTP as the underlyting protocol but there is no other HTTP methods other than GET and POST. The specification reside on top of HTTP although HTTP is not always the preferred way since GraphQL makes it possible to use other communication protocol. The reference implementation of GraphQL server is _graphql-js_ (https://github.com/graphql/graphql-js).
-
-
- 
-

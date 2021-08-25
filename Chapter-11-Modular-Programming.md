@@ -36,10 +36,12 @@ In ES6, JavaScript module is handled natively in its specification. This is a go
 //----- lib.js ------
 export const sqrt = Math.sqrt;
 export function square(x) {
-return x * x;
+    return x * x;
 }
+
 export function diag(x, y) {
-return sqrt(square(x) + square(y));
+    return sqrt(square(x) + square(y));
+}
 
 //------- main.js ------
 import { square, diag } from 'lib';

@@ -4,7 +4,7 @@ __Git__ is a software to manage source code versioning. In software development 
 
 ## What Are Git and GitHub?
 
-Git is a version control system software. It is used to track changes in files and also provides facilities to coordinate developer work on those files among fellow developers. Git was created by Linus Torvalds back in 2005 to coordinate Linux kernel development work after BitKeeper became a proprietary software. Usually, developers use Git to handle source code eventhough not necessarily source code can be handled by Git. Any digital files are able to be handled.
+Git is a __version control system software__. It is used to track changes in files and also provides facilities to coordinate developer work on those files among fellow developers. Git was created by _Linus Torvalds_ back in 2005 to coordinate Linux kernel development work after BitKeeper became a proprietary software. Usually, developers use Git to handle source code eventhough not necessarily source code can be handled by Git. Any digital files are able to be handled.
 
 A directory which is used to store files is called a __repository__. The repository can also be saved into a remote repository. GitHub is such a kind of service to provice remote repository for developers. The repository can be public or private.
 
@@ -39,54 +39,54 @@ A remote repository can be cloned into local computer using git clone:
 
 Example:
 
-    git clone https://github.com/ocam1/opam. git
+   ~$  git clone https://github.com/ocam1/opam. git
 
 or
 
-    git clone https://github.com/ocaml/opam
+    ~$ git clone https://github.com/ocaml/opam
 
 ### Create A Git Repository
 
 In local computer, a git repository can be created using (create and enter empty directory first):
 
-    git init
+    ~$ git init
 
 The result is __.git/__ directory where Git will write any change log. After this step, one can put any files into the directory and then make Git log them plus any changes which happen in any of those files.
 
 Put all the files or create any file inside, and then when everything is finished (at least at that point), use this to record any changes:
 
 ```
-git add -A
-git commit -m "Notes on this commit"
+~$ git add -A
+~$ git commit -m "Notes on this commit"
 ```
 
 One may also use __add__ for specific file(s) such as:
 
-    git add README.md
+   ~$  git add README.md
 
 ### Branching and Merging
 
 If one already commits all changes, it is a good practice to create a branch whenever a need to update repository contents is realized. After doing any updates, if the update is ok, the update will be committed and merged but if they are not ok then one may delete them without afraif of their files in repository dirty.
 
 ```
-git checkout -b branch-name
+~$ git checkout -b branch-name
 ...
 do any updates
 ...
-git checkout previous-branch
-git merge branch-name
-git branch -D delete branch-name
+~$ git checkout previous-branch
+~$ git merge branch-name
+~$ git branch -D delete branch-name
 ```
 
 If the update will be used:
 
 ```
-git checkout -b branch-name
+~$ git checkout -b branch-name
 ...
 do any update
 ...
-git checkout previous-branch
-git branch -D branch-name
+~$ git checkout previous-branch
+~$ git branch -D branch-name
 ```
 
 ## Git Workflow for Single Developer
@@ -109,17 +109,17 @@ We put __origin__ to represent the remote repository.
 There are many possibilities for a team but basically this section will discuss the generic steps for team. A team usually has a repo. This repo is called upstream repo. Upstream repo has an owner which has a right to permit or deny any request to the repo. Usually this person is called upstream author or maintainer. Any other person in the team is contributor. Git workflow for team can be describe below:
 
 1. A team has a repository. Make sure that every person clone the repo to their local computer:
-    `git clone URL.`
+    `git clone URL`
 2. Whenever a contributor need to make changes, make sure that he / she must create that in a branch. Example (inside repository in contributor’s local computer and branch is __master__):
 ```
-git checkout -b branch-name
+~$ git checkout -b branch-name
 ...
 update ...
 ...
-git add -A
-git commit -m "Notes (may also put #issue)"
-git checkout master
-git push origin branch-name
+~$ git add -A
+~$ git commit -m "Notes (may also put #issue)"
+~$ git checkout master
+~$ git push origin branch-name
 ```
 3. Contributor go to repo in GitHub, select branch and create __Pull Request__ (PR).
 4. The maintainer will review the code from PR tab, and then merge into master branch (or any other default branch) if the code is fine. Otherwise, the code will not be merged.
