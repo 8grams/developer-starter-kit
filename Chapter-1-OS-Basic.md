@@ -19,7 +19,7 @@ This chapter discuss some fundamental topics in operating system. __Operating Sy
               |
               V
         +-----------+
-        |     OS    |
+        |    OS     |
         +-----------+
               ^
               |
